@@ -21,10 +21,8 @@ Por defecto el sistema posee lineamientos a seguir específicos para calcular el
 ## Herramientas
 
 ---
-El sistema fue desarrollado con un lenguaje simple y poderoso en conjunto con algunas librerias
-para proporcionar un mejor desempeño:
+El sistema fue desarrollado utilizando el lenguaje [Python](https://www.python.org) y aprovecha de las sigueintes librerias:
 
-- [Python](https://www.python.org) - Lenguaje en el que fue desarrollada la aplicación.
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/) - Framework ligero para un rapido desarrollo.
 - [Ponyorm](https://ponyorm.org) - Libreria para manejo de la base de datos.
 
@@ -35,37 +33,37 @@ Una vez clonado ó descargado el repositorio cuanta con dos maneras iniciar
 
 1. En caso de querer usar la imagen docker:
     -	Ubicándose dentro de la carpeta del proyecto, montar la imagen ejecutando el comando:
-        ```sh
-        $ docker build -t foco .
-        ```
-    > Nota: `foco` es un nombre personalizado para la imagen el cual se puede sustituir por cualquier otro.
+         ```sh
+         $ docker build -t foco .
+         ```
+         > Nota: `foco` es un nombre personalizado para la imagen el cual se puede sustituir por cualquier otro.
     
     -	Para iniciar la imagen se debe ejecutar el comando: 
-            ```sh
-            $ docker run -it foco bash
-            ```
+         ```sh
+         $ docker run -it foco bash
+         ```
     -	Asegurarse de estar en la carpeta del proyecto `/usr/src/app`
     -	Para iniciar la aplicación se ejecuta el comando: 
+         ```sh
+         $ flask run
+         ```
+      1. En caso querer ejecutar de manera local:
+          - Ubicarse dentro de la carpeta del proyecto para activar el entorno virtual 
+            - En caso de estar usando el sistema Linux debe ejecutar el comando:
+              ```sh
+              $ source venv/Scripts/actívate
+              ```
+            - En caso de estar usando el sistema Windows ejecute el comando:
+              ```sh
+              > venv\Scripts\activate.bat
+              ```
+          - Ahora que el ambiente virtual esta activo para iniciar la aplicación ejecute el comando:
             ```sh
-            $ flask run
+            > flask run
             ```
-2. En caso querer ejecutar de manera local:
-    - Ubicarse dentro de la carpeta del proyecto para activar el entorno virtual 
-        - En caso de estar usando el sistema Linux debe ejecutar el comando:
-            ```sh
-            $ source venv/Scripts/actívate
-            ```
-        - En caso de estar usando el sistema Windows ejecute el comando:
-            ```sh
-            > venv\Scripts\activate.bat
-            ```
-        - Ahora que el ambiente virtual esta activo para iniciar la aplicación ejecute el comando:
-           ```sh
-           > flask run
-           ```
 El sistema usará el archivo `app.py` para iniciar dentro del `puerto 5000`. El cual puede ser editado para cambiar la naturaleza del proyecto cambiando el valor dentro de la llamada a la función `create_app()`.
-- 1 para colocar el sistema de forma normal.
-- 2 para colocar el sistema en modo de pruebas.
+-	1 para colocar el sistema de forma normal.
+-	2 para colocar el sistema en modo de pruebas.
 
 ## Configuración:
 
@@ -79,7 +77,6 @@ En caso de querer añadir nuevos lineamientos para un país en concreto se deben
 -	Asignar a la entrada el número de impuesto creado.
 -	Añadir los lineamientos específicos para el nuevo impuesto dentro de la clase calcularIVA.
 > Nota: Si se requiere hacer uso de un impuesto existente para un país nuevo, basta con asignar el número de impuesto dentro de la nueva entrada.
-
 
 ## Endpoints
 
